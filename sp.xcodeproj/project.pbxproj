@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1879AA871B146A0B00372608 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879AA861B146A0B00372608 /* RegisterViewController.m */; };
+		1879AA8A1B146B9A00372608 /* RegisterPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879AA891B146B9A00372608 /* RegisterPhoneViewController.m */; };
+		1879AA8D1B14705E00372608 /* RegisterPhoneAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879AA8C1B14705E00372608 /* RegisterPhoneAuthViewController.m */; };
 		18E869391B0425BC002FC7B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E869381B0425BC002FC7B1 /* Main.storyboard */; };
 		18E8693C1B042A32002FC7B1 /* BaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8693B1B042A32002FC7B1 /* BaseApi.m */; };
 		18F70CD91B0AB6C40096F178 /* BasketBallApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F70CD81B0AB6C40096F178 /* BasketBallApi.m */; };
@@ -51,6 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1879AA851B146A0B00372608 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		1879AA861B146A0B00372608 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		1879AA881B146B9A00372608 /* RegisterPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPhoneViewController.h; sourceTree = "<group>"; };
+		1879AA891B146B9A00372608 /* RegisterPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPhoneViewController.m; sourceTree = "<group>"; };
+		1879AA8B1B14705E00372608 /* RegisterPhoneAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPhoneAuthViewController.h; sourceTree = "<group>"; };
+		1879AA8C1B14705E00372608 /* RegisterPhoneAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPhoneAuthViewController.m; sourceTree = "<group>"; };
 		18E869381B0425BC002FC7B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18E8693A1B042A32002FC7B1 /* BaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseApi.h; sourceTree = "<group>"; };
 		18E8693B1B042A32002FC7B1 /* BaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseApi.m; sourceTree = "<group>"; };
@@ -132,6 +141,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1879AA7C1B145AEE00372608 /* Reg */ = {
+			isa = PBXGroup;
+			children = (
+				1879AA851B146A0B00372608 /* RegisterViewController.h */,
+				1879AA861B146A0B00372608 /* RegisterViewController.m */,
+				1879AA881B146B9A00372608 /* RegisterPhoneViewController.h */,
+				1879AA891B146B9A00372608 /* RegisterPhoneViewController.m */,
+				1879AA8B1B14705E00372608 /* RegisterPhoneAuthViewController.h */,
+				1879AA8C1B14705E00372608 /* RegisterPhoneAuthViewController.m */,
+			);
+			name = Reg;
+			sourceTree = "<group>";
+		};
 		18F4ACC61B09730300246AC7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +240,7 @@
 		18FC954B1B0032AA00BEF18B /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				1879AA7C1B145AEE00372608 /* Reg */,
 				18FC955A1B0051F900BEF18B /* Base */,
 				18FC95591B0051EF00BEF18B /* Me */,
 				18FC95581B0051E600BEF18B /* FootBall */,
@@ -483,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18FC95511B00347D00BEF18B /* BasketTeamTableViewController.m in Sources */,
+				1879AA8D1B14705E00372608 /* RegisterPhoneAuthViewController.m in Sources */,
 				18FC95F41B00815B00BEF18B /* NSDictionary+RequestEncoding.m in Sources */,
 				18FC95F81B00815B00BEF18B /* MKNetworkEngine.m in Sources */,
 				18FC95F71B00815B00BEF18B /* UIImageView+MKNetworkKitAdditions.m in Sources */,
@@ -500,8 +524,10 @@
 				18FC95F21B00815B00BEF18B /* NSData+MKBase64.m in Sources */,
 				18F70CE31B0B07CA0096F178 /* DistrictApi.m in Sources */,
 				18FC95F91B00815B00BEF18B /* MKNetworkOperation.m in Sources */,
+				1879AA8A1B146B9A00372608 /* RegisterPhoneViewController.m in Sources */,
 				18FC95F51B00815B00BEF18B /* NSString+MKNetworkKitAdditions.m in Sources */,
 				18FC95F31B00815B00BEF18B /* NSDate+RFC1123.m in Sources */,
+				1879AA871B146A0B00372608 /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

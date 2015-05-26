@@ -25,8 +25,6 @@
     }
     
     
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccess:) name:kNotificationLoginSuccess object:nil];
-    
 }
 
 
