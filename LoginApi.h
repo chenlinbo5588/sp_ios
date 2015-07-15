@@ -8,40 +8,18 @@
 
 #import "BaseApi.h"
 
-//#define kNotificationLoginSuccess @"kNotificationLoginSuccess"
-//#define kNotificationLoginFailed  @"kNotificationLoginFailed"
-
 
 
 @interface LoginApi : BaseApi
 
-typedef void (^LoginResponseBlock)(NSJSONSerialization *data);
-typedef void (^LogoutResponeBlock)(NSJSONSerialization *data);
 
-
-
-@property (strong,nonatomic) NSString *formhash;
-
-/*
-@property (strong,nonatomic) NSString *seccodemodid;
-@property (strong,nonatomic) NSString *seccodehash;
-@property (strong,nonatomic) NSString *seccodeverify;
-*/
-
-
-
-
--(MKNetworkOperation *)formhash:(JSONResponseBlock)completionBlock
-                 errorHandler:(MKNKErrorBlock) errorBlock;
-
-
--(MKNetworkOperation *)logout:(LogoutResponeBlock)completionBlock
+-(MKNetworkOperation *)logout:(JSONResponseBlock)completionBlock
                  errorHandler:(MKNKErrorBlock) errorBlock;
 
 
 -(MKNetworkOperation *)loginByUserName:(NSString *)username
                                   password:(NSString *)password
-                    completionHandler:(LoginResponseBlock) completionBlock
+                    completionHandler:(JSONResponseBlock) completionBlock
                           errorHandler:(MKNKErrorBlock) errorBlock;
 
 

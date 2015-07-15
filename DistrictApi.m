@@ -15,40 +15,17 @@
                  errorHandler:(MKNKErrorBlock)errorBlock
 {
     
-    
     if(_upid == nil){
         _upid = [NSMutableString stringWithFormat:@"0"];
     }
     
-    //NSDictionary *param = [[NSDictionary alloc] initWithObjects:@[_upid] forKeys:@[@"upid"]];
+    NSString *url = [NSString stringWithFormat:@"/index.php/district/index/upid/%@",_upid];
     
-    
-    NSString *query = [NSString stringWithFormat:@"/index.php/district/index/upid/%@",_upid];
-    MKNetworkOperation *op = [self operationWithPath:query
-                                              params:nil
-                                          httpMethod:@"GET"];
-    
-    
-    NSLog(@"OP=%@",op.url);
-    
-    [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
-     {
-         
-         DLog(@"Data from %@", [completedOperation.readonlyResponse allHeaderFields]);
-         
-         NSError *respErrror ;
-         NSJSONSerialization *json = [NSJSONSerialization JSONObjectWithData:completedOperation.responseData options:NSJSONReadingMutableLeaves error:&respErrror];
-         
-         completionBlock(json);
-         
-     } errorHandler:^(MKNetworkOperation *errorOp, NSError* error) {
-         
-         errorBlock(error);
-     }];
-    
-    [self enqueueOperation:op];
-    
-    return op;
+    return [self apiRequest:url postdata:nil completionHandler:^(NSJSONSerialization *json) {
+        completionBlock(json);
+    } errorHandler:^(NSError *error) {
+        errorBlock(error);
+    }];
     
 }
 

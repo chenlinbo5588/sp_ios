@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
-@interface UserModel : NSObject
+@interface UserModel : BaseModel
 
 @property (nonatomic , strong) NSString *uid;
 @property (nonatomic , strong) NSString *username;
-@property (nonatomic , strong) NSString *userGroupId;
-@property (nonatomic , strong) NSString *userGroupTitle;
+
 
 @end

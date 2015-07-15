@@ -165,7 +165,7 @@
             
             NSLog(@"message=%@",message);
             
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
             LoginViewController *loginViewController = [storyBoard instantiateViewControllerWithIdentifier:@"LoginViewScene"];
             
             [[self.navigationController parentViewController] dismissViewControllerAnimated:YES completion:^{

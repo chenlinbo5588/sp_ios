@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegisterApi.h"
 
-@interface RegisterPhoneViewController : UIViewController
+@interface RegisterPhoneViewController : UIViewController <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneText;
+@property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
+@property (nonatomic, strong) RegisterApi *registerApi;
+
+
 - (IBAction)nextButtonSubmit:(id)sender;
 
 @end

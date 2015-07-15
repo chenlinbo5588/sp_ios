@@ -56,7 +56,7 @@
     
     
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshList)];
-    UIBarButtonItem *districtButton = [[UIBarButtonItem alloc] initWithTitle:@"切换城市" style:UIBarButtonItemStylePlain target:self action:@selector(changeDistrict)];
+    UIBarButtonItem *districtButton = [[UIBarButtonItem alloc] initWithTitle:@"地区" style:UIBarButtonItemStylePlain target:self action:@selector(changeDistrict)];
     //[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(changeDistrict)];
     
     //UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonSystemItemAction target:self action:@selector(doneDistrict)];
@@ -68,9 +68,7 @@
     _tagRecoginer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doTableTap)];
     _tagRecoginer.numberOfTapsRequired = 1;
     */
-    
-    
-    
+
     //[self.tableView addGestureRecognizer:_tagRecoginer];
     
 }
@@ -297,8 +295,8 @@
                 detail = @"10个";
                 break;
             case BASKET_LEAGUE_ROWINDEX:
-                title = @"组织赛事";
-                detail = @"自己组织赛事";
+                title = @"业余联赛";
+                detail = @"5个赛事进行中";
                 break;
             default:
                 break;
@@ -321,11 +319,12 @@
     
     
     if(indexPath.section == 0 && indexPath.row == BASKET_TEAM_ROWINDEX){
-        
+        /*
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         BasketTeamTableViewController *basketTeamViewController = [storyBoard instantiateViewControllerWithIdentifier:@"BasketBallTeam"];
 
         [self.navigationController pushViewController:basketTeamViewController animated:YES];
+         */
     }
     
     
@@ -371,6 +370,11 @@
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
 
+    
+    if ([identifier isEqualToString:@"basketCellSegue"]) {
+        return YES;
+    }
+    
  
     return YES;
 }

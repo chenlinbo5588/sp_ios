@@ -28,7 +28,7 @@
 }
 
 
--(void)refreshLogin
+-(void)refreshSecurity
 {
     [_apiLogin formhash:^(NSJSONSerialization *json){
         NSLog(@"refresh when login failed");
@@ -44,7 +44,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self refreshLogin];
+    [self refreshSecurity];
     
     
 }
@@ -92,12 +92,14 @@
     
     
     if (_usernameText.text.length > 0 && _passwordText.text.length > 0) {
+
         
         
         [_apiLogin loginByUserName:_usernameText.text password:_passwordText.text completionHandler:^(NSJSONSerialization *d){
+            
             NSString *string = [d valueForKey:@"message"];
             
-            if([string isEqualToString:@"登陆成功"]){
+            if(string != nil && [string isEqualToString:@"登陆成功"]){
                 
                 NSString *jsonData = [d valueForKeyPath:@"data.memberinfo"];
                 
@@ -110,22 +112,28 @@
                 UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 UITabBarController *mainViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MainTabbedView"];
                 
+                [self.navigationController popViewControllerAnimated:NO];
+                [self showViewController:mainViewController sender:nil];
                 
-                [self showViewController:mainViewController sender:sender];
-
+                
+                //[self.navigationController popToRootViewControllerAnimated:YES];
+                //[self.navigationController pushViewController:mainViewController animated:YES];
+                //[self showViewController:mainViewController sender:nil];
                 //[self dismissViewControllerAnimated:YES completion:^{
-                
-                //  [self showViewController:mainViewController sender:sender];
-                //}];
 
-                
+                //}];
+             
             }else{
-                [self refreshLogin];
+                [self refreshSecurity];
+                
+                if(string == nil){
+                    string = @"系统错误";
+                }
 
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登录提示" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
                 [alert show];
             }
-            
+           
         } errorHandler:^(NSError *error){
             NSLog(@"error=%@",error);
         }];
